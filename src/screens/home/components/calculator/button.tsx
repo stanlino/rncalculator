@@ -6,12 +6,16 @@ import {
   ButtonContainer,
   ButtonContent,
   ButtonText,
+  Icon,
   Pressable,
 } from './styles'
 
 interface ButtonProps {
   name: string
   type: 'number' | 'operator'
+  value: string
+  icon?: boolean
+  action: (name: string) => void
 }
 
 export function Button(props: ButtonProps){
@@ -23,7 +27,7 @@ export function Button(props: ButtonProps){
   }))
 
   function handlePressIn() {
-    animatedScale.value = withTiming(0.8)
+    animatedScale.value = withTiming(0.9)
     Vibration.vibrate(10)
   }
 
@@ -31,13 +35,25 @@ export function Button(props: ButtonProps){
     animatedScale.value = withTiming(1)
   }
 
+  function handlePress() {
+    props.action(props.value)
+  }
+
   return (
     <ButtonContainer>
       <ButtonContent style={animatedStyle}>
-        <Pressable onPressIn={handlePressIn} onPressOut={handlePressOut}>
-          <ButtonText type={props.type}>
-            {props.name}
-          </ButtonText>
+        <Pressable 
+          onPress={handlePress} 
+          onPressIn={handlePressIn} 
+          onPressOut={handlePressOut}
+        >
+          {props.icon ? (
+            <Icon name={props.name} />
+          ) : (
+            <ButtonText type={props.type}>
+              {props.name}
+            </ButtonText>
+          )}
         </Pressable>
       </ButtonContent>
     </ButtonContainer>

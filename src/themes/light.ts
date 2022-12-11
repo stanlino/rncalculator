@@ -5,6 +5,6 @@ export default {
     fg: '#f7f7f7',
     text: '#2b2e36',
     text_secondary: '#a0a3b1',
-    button: '#f7f7f7'
+    button: '#f2f2f2'
   }
 }

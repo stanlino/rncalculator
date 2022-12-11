@@ -2,6 +2,7 @@ interface Button {
   name: string
   type: 'number' | 'operator'
   value: string
+  icon?: boolean
 }
 
 type Row = Button[]
@@ -18,14 +19,16 @@ const rows: Row[] = [
     value: '()',
   },
   {
-    name: '%',
+    name: 'percent',
     type: 'operator',
     value: '%',
+    icon: true
   },
   {
-    name: '÷',
+    name: 'divide',
     type: 'operator',
     value: '/',
+    icon: true
   }],
   [
     {
@@ -47,6 +50,7 @@ const rows: Row[] = [
       name: 'x',
       type: 'operator',
       value: '*',
+      icon: true
     }
   ],
   [
@@ -66,9 +70,10 @@ const rows: Row[] = [
       value: '6',
     },
     {
-      name: '-',
+      name: 'minus',
       type: 'operator',
       value: '-',
+      icon: true
     }
   ],
   [
@@ -88,16 +93,18 @@ const rows: Row[] = [
       value: '3',
     },
     {
-      name: '+',
+      name: 'plus',
       type: 'operator',
       value: '+',
+      icon: true
     }
   ],
   [
     {
-      name: 'C',
+      name: 'arrow-left',
       type: 'operator',
       value: 'C',
+      icon: true
     },
     {
       name: '0',

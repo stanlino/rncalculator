@@ -1,4 +1,5 @@
 import Animated from 'react-native-reanimated'
+import { Feather } from '@expo/vector-icons';
 import styled from 'styled-components/native'
 
 export const Container = styled.View`
@@ -34,6 +35,12 @@ export const Pressable = styled.Pressable`
 interface TextProps {
   type: 'number' | 'operator'
 }
+
+export const Icon = styled(Feather) <TextProps>`
+  font-size: 24px;
+
+  color: #0D98BA;
+`
 
 export const ButtonText = styled.Text<TextProps>`
   font-size: 24px;

@@ -16,6 +16,14 @@ export const Header = styled.View`
   flex: 1;
 `
 
+export const Output = styled.Text`
+  font-size: 48px;
+  font-weight: bold;
+  color: ${({ theme }) => theme.colors.text};
+  text-align: right;
+  padding: 16px;
+`
+
 export const Body = styled.View`
   flex: 3;
   background-color: ${({ theme }) => theme.colors.fg};

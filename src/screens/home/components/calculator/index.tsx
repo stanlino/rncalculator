@@ -8,13 +8,24 @@ import {
 import rows from './rows'
 import { Button } from './button'
 
-export function Calculator(){
+interface CalculatorProps {
+  onButtonPress: (name: string) => void
+}
+
+export function Calculator({ onButtonPress }: CalculatorProps){
   return (
     <Container>
       {rows.map((row, index) => (
         <Row key={index.toString()}>
           {row.map((button) => (
-            <Button name={button.name} type={button.type} key={button.name} />
+            <Button 
+              name={button.name} 
+              type={button.type} 
+              value={button.value}
+              icon={button.icon}
+              key={button.name} 
+              action={onButtonPress}
+            />
           ))}
         </Row>
       ))}
