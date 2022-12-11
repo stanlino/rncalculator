@@ -1,3 +1,4 @@
+import Animated from 'react-native-reanimated'
 import styled from 'styled-components/native'
 
 export const Container = styled.View`
@@ -10,19 +11,22 @@ export const Row = styled.View`
   flex-direction: row;
 `
 
-export const Wrapper = styled.View`
+export const ButtonContainer = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
 `
 
-export const Button = styled.Pressable`
+export const ButtonContent = styled(Animated.View)`
   background-color: ${({ theme }) => theme.colors.button};
   height: 80%;
   aspect-ratio: 1;
 
   border-radius: 8px;
+`
 
+export const Pressable = styled.Pressable`
+  flex: 1;
   align-items: center;
   justify-content: center;
 `
@@ -31,7 +35,7 @@ interface TextProps {
   type: 'number' | 'operator'
 }
 
-export const Text = styled.Text<TextProps>`
+export const ButtonText = styled.Text<TextProps>`
   font-size: 24px;
   font-weight: bold;
 

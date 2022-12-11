@@ -95,19 +95,19 @@ const rows: Row[] = [
   ],
   [
     {
-      name: '1',
-      type: 'number',
-      value: '1',
+      name: 'C',
+      type: 'operator',
+      value: 'C',
     },
     {
-      name: '2',
+      name: '0',
       type: 'number',
-      value: '2',
+      value: '0',
     },
     {
-      name: '3',
-      type: 'number',
-      value: '3',
+      name: '.',
+      type: 'operator',
+      value: '.',
     },
     {
       name: '=',
