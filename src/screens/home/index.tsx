@@ -16,7 +16,10 @@ export function HomeScreen(){
   const [output, setOutput] = useState('0')
 
   function onButtonPress(value: string){
-    
+    if (value === 'AC') return setOutput('0')
+    if (output === '0') return setOutput(value)
+
+    setOutput(prev => prev+value)
   }
 
   return (
