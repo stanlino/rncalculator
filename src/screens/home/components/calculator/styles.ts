@@ -24,6 +24,8 @@ export const ButtonContent = styled(Animated.View)`
   aspect-ratio: 1;
 
   border-radius: 8px;
+
+  elevation: 1;
 `
 
 export const Pressable = styled.Pressable`

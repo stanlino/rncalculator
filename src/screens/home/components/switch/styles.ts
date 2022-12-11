@@ -9,6 +9,8 @@ export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.fg};
 
   flex-direction: row;
+
+  elevation: 2;
 `
 
 export const Pressable = styled.Pressable`
