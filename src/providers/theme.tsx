@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { createContext, ReactNode, useCallback, useContext, useState } from "react";
+import { createContext, ReactNode, useCallback, useContext, useState, useEffect } from "react";
+import { useColorScheme } from "react-native";
 import { ThemeProvider as SCThemeProvider } from 'styled-components'
 
 import { dark, light } from "../themes";
@@ -13,13 +14,19 @@ const ThemeContext = createContext({} as ThemeContextData)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
 
-  const [theme, setTheme] = useState(dark)
+  const userColorScheme = useColorScheme() === 'dark' ? dark : light
+
+  const [theme, setTheme] = useState(userColorScheme)
 
   const toggleTheme = useCallback(() => {
-    setTheme(prevState => prevState.name === 'DARK' ? light : dark)
+    setTheme(prevState => prevState.name === 'dark' ? light : dark)
   },[])
 
-  const statusBarStyle = theme.name === 'DARK' ? 'light' : 'dark'
+  useEffect(() => {
+    setTheme(userColorScheme)
+  },[userColorScheme])
+
+  const statusBarStyle = theme.name === 'dark' ? 'light' : 'dark'
   const statusBarBackgroundColor = theme.colors.bg
 
   return (

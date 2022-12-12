@@ -1,5 +1,5 @@
 export default {
-  name: 'DARK',
+  name: 'dark',
   colors: {
     bg: '#22252d',
     fg: '#2a2d37',

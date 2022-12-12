@@ -10,7 +10,7 @@ export function Switch(){
 
   const { toggleTheme, themeName } = useThemeContext()
 
-  const currentThemeIsDark = themeName === 'DARK'
+  const currentThemeIsDark = themeName === 'dark'
 
   return (
     <Container>
