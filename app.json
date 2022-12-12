@@ -27,7 +27,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#22252d"
-      }
+      },
+      "package": "com.stanleyfilipe.rncalculator"
     },
     "web": {
       "favicon": "./assets/favicon.png"
