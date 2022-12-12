@@ -1,6 +1,6 @@
 import Animated from 'react-native-reanimated'
 import { Feather } from '@expo/vector-icons';
-import styled from 'styled-components/native'
+import styled, { css } from 'styled-components/native'
 
 export const Container = styled.View`
   flex: 1;
@@ -12,16 +12,22 @@ export const Row = styled.View`
   flex-direction: row;
 `
 
-export const ButtonContainer = styled.View`
+interface ButtonContainerProps {
+  lg?: boolean
+}
+
+export const ButtonContainer = styled.View<ButtonContainerProps>`
   flex: 1;
-  align-items: center;
-  justify-content: center;
+
+  ${({ lg }) => lg && css`
+    flex: 2;
+  `}
 `
 
 export const ButtonContent = styled(Animated.View)`
+  flex: 1;
   background-color: ${({ theme }) => theme.colors.button};
-  height: 80%;
-  aspect-ratio: 1;
+  margin: 4px;
 
   border-radius: 8px;
 

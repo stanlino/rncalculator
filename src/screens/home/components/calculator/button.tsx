@@ -1,6 +1,7 @@
 import React from 'react'
 import { Vibration } from 'react-native'
 import { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
+import { useCalculator } from '../../../../hooks/useCalculator'
 
 import {
   ButtonContainer,
@@ -15,10 +16,11 @@ interface ButtonProps {
   type: 'number' | 'operator'
   value: string
   icon?: boolean
-  action: (name: string) => void
 }
 
 export function Button(props: ButtonProps){
+
+  const { detectAction } = useCalculator()
 
   const animatedScale = useSharedValue(1)
 
@@ -36,11 +38,13 @@ export function Button(props: ButtonProps){
   }
 
   function handlePress() {
-    props.action(props.value)
+    detectAction(props.value)
   }
 
+  const itemsFlex2 = ['AC', '=']
+
   return (
-    <ButtonContainer>
+    <ButtonContainer lg={itemsFlex2.includes(props.name)}>
       <ButtonContent style={animatedStyle}>
         <Pressable 
           onPress={handlePress} 

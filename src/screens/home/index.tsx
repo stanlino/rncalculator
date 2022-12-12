@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
+
+import { useCalculator } from '../../hooks/useCalculator'
 
 import { Switch } from './components/switch'
 import { Calculator } from './components/calculator'
@@ -12,15 +14,7 @@ import {
 } from './styles'
 
 export function HomeScreen(){
-
-  const [output, setOutput] = useState('0')
-
-  function onButtonPress(value: string){
-    if (value === 'AC') return setOutput('0')
-    if (output === '0') return setOutput(value)
-
-    setOutput(prev => prev+value)
-  }
+  const { value } = useCalculator()
 
   return (
     <Container>
@@ -29,14 +23,14 @@ export function HomeScreen(){
       </TopBar>
       <Header>
         <Output
-          numberOfLines={3}
+          numberOfLines={5}
           adjustsFontSizeToFit
         >
-          {output}
+          {value}
         </Output>
       </Header>
       <Body>
-        <Calculator onButtonPress={onButtonPress} />
+        <Calculator />
       </Body>
     </Container>
   )

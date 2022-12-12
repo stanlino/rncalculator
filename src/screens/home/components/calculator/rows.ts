@@ -14,14 +14,9 @@ const rows: Row[] = [
     value: 'AC',
   },
   {
-    name: '( )',
+    name: 'arrow-left',
     type: 'operator',
-    value: '()',
-  },
-  {
-    name: 'percent',
-    type: 'operator',
-    value: '%',
+    value: 'C',
     icon: true
   },
   {
@@ -100,12 +95,6 @@ const rows: Row[] = [
     }
   ],
   [
-    {
-      name: 'arrow-left',
-      type: 'operator',
-      value: 'C',
-      icon: true
-    },
     {
       name: '0',
       type: 'number',
