@@ -5,7 +5,9 @@
 
 > A simple calculator made with React Native
 
-### ✨ [Demo](https://github.com/stanlino/rncalculator/apk/rncalculator.apk)
+> <img alt="Version" src="./assets/demo.jpeg" width="250px" />
+
+### ✨ [Demo](https://github.com/stanlino/rncalculator/tree/master/apk)
 
 ## Install
 
