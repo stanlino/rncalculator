@@ -1,15 +1,18 @@
 {
   "expo": {
-    "name": "rncalculator",
+    "name": "Calculadora",
     "slug": "rncalculator",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
+    "jsEngine": "hermes",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#22252d"
+    },
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#22252d"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,7 +26,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#22252d"
       }
     },
     "web": {
